@@ -9,6 +9,10 @@ defmodule OurBillsWeb.Router do
     pipe_through :api
   end
 
+  scope "/bills", OurBillsWeb do
+    post "/", BillsController, :create
+  end
+
   # Enables LiveDashboard only for development
   #
   # If you want to use the LiveDashboard in production, you should put
