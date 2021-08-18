@@ -11,6 +11,9 @@ defmodule OurBillsWeb.Router do
 
   scope "/bills", OurBillsWeb do
     post "/", BillsController, :create
+    get "/", BillsController, :index
+    put "/:id", BillsController, :update
+    delete "/:id", BillsController, :delete
   end
 
   # Enables LiveDashboard only for development

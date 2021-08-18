@@ -24,6 +24,8 @@ defmodule OurBillsWeb do
       import Plug.Conn
       import OurBillsWeb.Gettext
       alias OurBillsWeb.Router.Helpers, as: Routes
+
+      action_fallback(OurBillsWeb.FallbackController)
     end
   end
 
