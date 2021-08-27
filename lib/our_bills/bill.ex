@@ -1,4 +1,4 @@
-defmodule OurBills.Bills.Bill do
+defmodule OurBills.Bill do
   use OurBills.BaseSchema
 
   @required_fields ~w(amount title bill_date)a
@@ -13,8 +13,17 @@ defmodule OurBills.Bills.Bill do
     timestamps()
   end
 
-  def changeset(bill, attrs) do
-    bill
+  def build(params) do
+    params
+    |> changeset()
+    |> apply_action(:insert)
+  end
+
+  def changeset(attrs), do: create_changeset(%__MODULE__{}, attrs)
+  def changeset(bill, attrs), do: create_changeset(bill, attrs)
+
+  defp create_changeset(module_or_bill, attrs) do
+    module_or_bill
     |> cast(attrs, @required_fields ++ @optional_fields)
     |> validate_required(@required_fields)
   end

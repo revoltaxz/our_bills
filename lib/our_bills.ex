@@ -1,9 +1,8 @@
 defmodule OurBills do
-  @moduledoc """
-  OurBills keeps the contexts that define your domain
-  and business logic.
+  alias OurBills.Bill
 
-  Contexts are also responsible for managing your data, regardless
-  if it comes from the database, an external API or others.
-  """
+  defdelegate create_bill(params), to: Bill.Create, as: :call
+  defdelegate delete_bill(params), to: Bill.Delete, as: :call
+  defdelegate update_bill(params), to: Bill.Update, as: :call
+  defdelegate list_bills(params), to: Bill.Index, as: :call
 end
