@@ -23,7 +23,14 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
-config :money, default_currency: :BRL
+config :money,
+  default_currency: :BRL,
+  separator: ".",
+  delimeter: ",",
+  symbol: false,
+  symbol_on_right: false,
+  symbol_space: true,
+  fractional_unit: true
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason

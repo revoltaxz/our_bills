@@ -16,7 +16,7 @@ defmodule OurBillsWeb.BillsView do
       title: title,
       date: bill_date,
       description: description,
-      amount: amount.amount
+      amount: Money.to_string(amount)
     }
   end
 
@@ -29,7 +29,7 @@ defmodule OurBillsWeb.BillsView do
         title: title,
         date: bill_date,
         description: description,
-        amount: amount.amount
+        amount: Money.to_string(amount)
       }
     }
   end
@@ -43,7 +43,7 @@ defmodule OurBillsWeb.BillsView do
         title: title,
         date: bill_date,
         description: description,
-        amount: amount.amount
+        amount: Money.to_string(amount)
       }
     }
   end
