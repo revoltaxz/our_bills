@@ -44,7 +44,8 @@ defmodule OurBills.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:money, "~> 1.8"}
+      {:money, "~> 1.8"},
+      {:argon2_elixir, "~> 2.0"}
     ]
   end
 
